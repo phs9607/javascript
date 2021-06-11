@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>구구단</title>
+</head>
+<body>
+    <h2>구구단</h2>
+    <script>
+        var i, j;
+
+        for (i = 2; i < 10; i++){
+            document.write("<h3>" + i + "단</h3><br>")
+            for (j = 2; j < 10; j++){
+                document.write(i + " × " + j + " = " + i*j + '<br>');
+            }
+            document.write('<br>');
+        }
+    </script>
+</body>
+</html>
