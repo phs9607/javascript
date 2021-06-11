@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롤링 갤러리</title>
+    <style>
+        #container{
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        img{
+            vertical-align: middle; /*수직 정렬*/
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h2>롤링(rolling) 갤러리</h2>
+    <a href="#" onclick="prevgallery()"><img src="../images/left_btn.png" alt="왼쪽 버튼"></a>
+    <a href="#"><img src="../images/img1.jpg" alt="새의 사진" id="gallery"></a>
+    <a href="#" onclick="nextgallery()"><img src="../images/right_btn.png" alt="오른쪽 버튼"></a>
+    </div>
+    <script>
+        // 오른쪽 이미지 클릭하면 이미지 넘기기
+        var num = 1;
+        function nextgallery(){
+            num += 1;
+            if(num > 7){
+                num = 1;
+            }
+            document.getElementById('gallery').src = "../images/img" + num + ".jpg";
+        }
+        function prevgallery(){
+            num -= 1;
+            if(num < 1){
+                num = 7;
+            }
+            document.getElementById('gallery').src = "../images/img" + num + ".jpg"
+        }
+        
+    </script>
+</body>
+</html>
