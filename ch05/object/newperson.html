@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자함수로 객체 생성하기</title>
+</head>
+<body>
+    <script>
+        function Person (name, age, isMerried){
+            this.name = name;
+            this.age = age;
+            this.isMerried = isMerried;
+
+            this.info = function(){
+                if(this.isMerried === true){
+                    document.write(this.name + "는(은) 기혼입니다.")
+                }
+                else{
+                    document.write(this.name + "는(은) 미혼입니다.")
+                }
+            }
+        }
+
+        var person1 = new Person("추신수", 39, true);
+        document.write("이름 : " + person1.name + '<br>');
+        document.write("나이 : " + person1.age + '<br>');
+        person1.info();
+        document.write("<br>---------------------------- <br>")
+
+        var personSon = new Person("손흥민", 30, false);
+        document.write("이름 : " + personSon.name + '<br>');
+        document.write("나이 : " + personSon.age + '<br>');
+        personSon.info();
+    </script>
+</body>
+</html>
